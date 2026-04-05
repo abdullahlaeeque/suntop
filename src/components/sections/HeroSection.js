@@ -61,8 +61,16 @@ export function HeroSection() {
     }
   ];
 
+  // UPDATED FUNCTION (Smooth Scroll)
   const handleNavigate = () => {
-    router.push('/products');
+    const section = document.getElementById('products-section');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   const handleVideoLoad = () => {
@@ -71,9 +79,9 @@ export function HeroSection() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Video Background - Fixed implementation */}
+
+      {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
-        
 
         <video
           autoPlay
@@ -83,33 +91,32 @@ export function HeroSection() {
           preload="metadata"
           onLoadedData={handleVideoLoad}
           className="w-full h-full object-cover"
-          poster="/placeholder.jpg" // Add a placeholder image for faster initial load
+          poster="/placeholder.jpg"
         >
           <source src="/glucomat.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
-        {/* Video overlay for better readability */}
+
+        {/* Overlays */}
         <div className="absolute inset-0 bg-black/20 backdrop-blur-[5px]"></div>
-        
-        {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+
       </div>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col items-center text-center w-full max-w-4xl mx-auto">
-          
-          <motion.div 
+
+          <motion.div
             className="w-full space-y-8"
             initial="hidden"
             animate={controls}
             variants={containerVariants}
           >
-            
+
             {/* Badge */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
               variants={itemVariants}
             >
@@ -117,7 +124,7 @@ export function HeroSection() {
               <span className="text-white text-sm font-medium">Trusted Healthcare Partner</span>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Heading */}
             <motion.div className="space-y-4" variants={itemVariants}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Advance Ethical
@@ -128,19 +135,20 @@ export function HeroSection() {
                   Medicine
                 </span>
               </h1>
-              
+
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto">
                 Manufacturing high-quality diabetes and cardiac medications with exclusive distributorship opportunities across the nation.
               </p>
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div 
+            {/* Buttons */}
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               variants={itemVariants}
             >
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 className="bg-white text-[#2d66ac] hover:bg-gray-100 rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105 shadow-lg border-0"
                 onClick={handleNavigate}
               >
@@ -148,9 +156,9 @@ export function HeroSection() {
                 View Products
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 variant="outline"
                 className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105"
                 onClick={() => router.push('/distributors')}
@@ -158,46 +166,60 @@ export function HeroSection() {
                 <Handshake className="mr-2 h-5 w-5" />
                 Become Distributor
               </Button>
+
             </motion.div>
 
-            {/* Features Grid */}
-            <motion.div 
+            {/* Features */}
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 max-w-3xl mx-auto"
               variants={containerVariants}
             >
+
               {features.map((feature, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   variants={itemVariants}
                   whileHover={{ y: -2 }}
                   className="group"
                 >
+
                   <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-white/30 transition-all duration-300 h-full">
+
                     <div className="flex flex-col items-center text-center space-y-3">
+
                       <div className="bg-white/20 rounded-lg p-2 border border-white/30 group-hover:bg-white/30 transition-colors">
                         <feature.icon className="h-5 w-5 text-white" />
                       </div>
+
                       <div className="space-y-1">
                         <h3 className="font-semibold text-white text-base">{feature.title}</h3>
                         <p className="text-gray-200 text-xs">{feature.description}</p>
                       </div>
+
                     </div>
+
                   </div>
+
                 </motion.div>
               ))}
+
             </motion.div>
+
           </motion.div>
+
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
+
         <div className="flex flex-col items-center space-y-2">
+
           <div className="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center">
             <motion.div
               className="w-1 h-2 bg-white/50 rounded-full mt-2"
@@ -205,10 +227,11 @@ export function HeroSection() {
               transition={{ duration: 1.5, repeat: Infinity }}
             />
           </div>
+
         </div>
+
       </motion.div>
 
-    
     </section>
   );
 }

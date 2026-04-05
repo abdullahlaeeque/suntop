@@ -1,5 +1,5 @@
 // app/layout.js
-import { Header } from '@/components/layout/Header';
+import { Header } from '../components/sections/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 

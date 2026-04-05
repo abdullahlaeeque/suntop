@@ -1,14 +1,16 @@
-// app/products/page.js
 'use client'
+
 import { useState } from 'react';
 import Image from 'next/image';
 import { X, Pill, Package, Calendar } from 'lucide-react';
+import { HeroSection } from '@/components/sections/HeroSection';
 
 const products = [
   {
     id: '1',
     name: 'Glucomat-GP1 Tablets',
-    description: 'Metformin Hydrochloride Prolonged Release and Glimepiride Tablets I.P. - Advanced diabetes management with dual-action therapy for effective glycemic control.',
+    description:
+      'Metformin Hydrochloride Prolonged Release and Glimepiride Tablets I.P. - Advanced diabetes management with dual-action therapy for effective glycemic control.',
     composition: 'Metformin HCl PR + Glimepiride',
     packSize: '10 x 15 Tablets',
     image: '/gp1.jpeg',
@@ -17,7 +19,8 @@ const products = [
   {
     id: '2',
     name: 'Glucomat-GP2 Tablets',
-    description: 'Metformin Hydrochloride Prolonged Release and Glimepiride Tablets I.P. - Comprehensive diabetes management solution for sustained blood sugar control.',
+    description:
+      'Metformin Hydrochloride Prolonged Release and Glimepiride Tablets I.P. - Comprehensive diabetes management solution for sustained blood sugar control.',
     composition: 'Metformin HCl PR + Glimepiride',
     packSize: '10 x 15 Tablets',
     image: '/gp2.jpeg',
@@ -29,30 +32,28 @@ function ProductDialog({ product, isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center ">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto " >
-        {/* Header */}
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+
         <div className="relative bg-gradient-to-r from-blue-600 to-blue-600 text-white p-4">
-        <div className="flex justify-between items-start ">
+          <div className="flex justify-between items-start">
             <h2 className="text-2xl font-bold">{product.name}</h2>
-            <button
-              onClick={onClose}
-              className="text-white hover:text-blue-200 transition-colors"
-            >
+
+            <button onClick={onClose}>
               <X className="h-6 w-6" />
             </button>
           </div>
+
           <div className="flex items-center space-x-2 mt-2">
             <Pill className="h-4 w-4" />
             <span className="text-blue-100">{product.category}</span>
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-6">
-          {/* Product Image */}
+
           <div className="flex justify-center mb-6">
-            <div className="relative w-48 h-48 bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl border border-blue-200">
+            <div className="relative w-48 h-48 bg-blue-50 rounded-2xl border border-blue-200">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -62,16 +63,14 @@ function ProductDialog({ product, isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Description */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Description</h3>
-            <p className="text-gray-600 leading-relaxed">{product.description}</p>
+            <h3 className="text-lg font-semibold mb-2">Description</h3>
+            <p className="text-gray-600">{product.description}</p>
           </div>
 
-          {/* Composition */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Composition</h3>
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+            <h3 className="text-lg font-semibold mb-2">Composition</h3>
+            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
               <div className="flex items-center space-x-2 text-blue-700">
                 <Pill className="h-5 w-5" />
                 <span className="font-semibold">{product.composition}</span>
@@ -79,10 +78,9 @@ function ProductDialog({ product, isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Pack Size */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Pack Size</h3>
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+            <h3 className="text-lg font-semibold mb-2">Pack Size</h3>
+            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
               <div className="flex items-center space-x-2 text-blue-700">
                 <Package className="h-5 w-5" />
                 <span className="font-semibold">{product.packSize}</span>
@@ -90,7 +88,6 @@ function ProductDialog({ product, isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Prescription Notice */}
           <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
             <div className="flex items-center space-x-2 text-blue-700">
               <Calendar className="h-5 w-5" />
@@ -100,33 +97,36 @@ function ProductDialog({ product, isOpen, onClose }) {
               This medication requires a valid prescription from a healthcare professional.
             </p>
           </div>
+
         </div>
 
-        {/* Footer */}
-        <div className="border-t border-gray-200 p-6">
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://wa.me/917089935433?text=Hi,%20I'm%20interested%20in%20Glucomat-GP1%20Tablets"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold text-center transition-all duration-300 hover:scale-105"
-            >
-              Inquire on WhatsApp
-            </a>
-            <button
-              onClick={onClose}
-              className="flex-1 border border-blue-600 text-blue-600 hover:bg-blue-50 py-3 rounded-xl font-semibold transition-all duration-300"
-            >
-              Close
-            </button>
-          </div>
+        <div className="border-t p-6 flex gap-3 flex-col sm:flex-row">
+
+          <a
+            href="https://wa.me/917089935433?text=Hi,%20I'm%20interested%20in%20Glucomat-GP1%20Tablets"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-center font-semibold"
+          >
+            Inquire on WhatsApp
+          </a>
+
+          <button
+            onClick={onClose}
+            className="flex-1 border border-blue-600 text-blue-600 py-3 rounded-xl font-semibold"
+          >
+            Close
+          </button>
+
         </div>
+
       </div>
     </div>
   );
 }
 
 export default function ProductsPage() {
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -136,89 +136,86 @@ export default function ProductsPage() {
   };
 
   const closeDialog = () => {
-    setIsDialogOpen(false);
     setSelectedProduct(null);
+    setIsDialogOpen(false);
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-blue-50 to-blue-50'>
-    {/* Hero Section */}
-    <section className="relative bg-gradient-to-r from-blue-500 to-blue-700 text-white pt-40 py-20">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Products
-            </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-              High-quality diabetes medications manufactured with precision and care
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-50">
 
-      {/* Products Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {products.map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-white/90 backdrop-blur-sm rounded-2xl border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:transform hover:scale-105 cursor-pointer"
-                  onClick={() => openDialog(product)}
-                >
-                  {/* Product Image */}
-                  <div className="relative aspect-square bg-gradient-to-br from-blue-50 to-blue-50">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain p-6 group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">
-                        {product.category}
-                      </div>
-                    </div>
+      {/* HERO */}
+      <HeroSection />
+
+      {/* PRODUCTS GRID */}
+      <section id="products-section" className="py-16">
+
+        <div className="container mx-auto px-4 max-w-5xl">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {products.map((product) => (
+
+              <div
+                key={product.id}
+                onClick={() => openDialog(product)}
+                className="bg-white rounded-2xl border border-blue-100 shadow-lg hover:shadow-xl transition-all overflow-hidden cursor-pointer"
+              >
+
+                <div className="relative aspect-square bg-blue-50">
+
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-6"
+                  />
+
+                  <div className="absolute top-4 right-4 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">
+                    {product.category}
                   </div>
 
-                  {/* Product Info */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
-                      {product.name}
-                    </h3>
-
-                    <div className="space-y-3">
-                      {/* Composition */}
-                      <div className="flex items-center space-x-2">
-                        <Pill className="h-4 w-4 text-blue-600 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{product.composition}</span>
-                      </div>
-
-                      {/* Pack Size */}
-                      <div className="flex items-center space-x-2">
-                        <Package className="h-4 w-4 text-blue-600 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{product.packSize}</span>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-4 text-center">
-                      <button className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors">
-                        View Details →
-                      </button>
-                    </div>
-                  </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="p-6 text-center">
+
+                  <h3 className="text-xl font-bold mb-3">
+                    {product.name}
+                  </h3>
+
+                  <div className="space-y-3">
+
+                    <div className="flex items-center space-x-2 justify-center">
+                      <Pill className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm text-gray-600">
+                        {product.composition}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 justify-center">
+                      <Package className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm text-gray-600">
+                        {product.packSize}
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div className="mt-4 text-blue-600 font-semibold text-sm">
+                    View Details →
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+
           </div>
+
         </div>
+
       </section>
 
-
-      {/* Product Dialog */}
       {selectedProduct && (
         <ProductDialog
           product={selectedProduct}
@@ -226,6 +223,7 @@ export default function ProductsPage() {
           onClose={closeDialog}
         />
       )}
+
     </div>
   );
 }
