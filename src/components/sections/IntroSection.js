@@ -144,7 +144,7 @@ export const IntroSection = ({ isVisible = true }) => {
           className="text-xs font-semibold tracking-[0.2em] uppercase mb-5"
           style={{ fontFamily: "'Arial', sans-serif", letterSpacing: '0.18em', color: '#3b82f6' }}
         >
-          Trusted MBBS Abroad Consultancy · Est. 2016
+          Trusted MBBS Abroad Consultancy 
         </motion.p>
 
         <motion.h1
