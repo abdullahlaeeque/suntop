@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
 export const metadata = {
-  title: 'Suntop International - Diabetes Care Specialists',
+  title: 'Suntop International - Healthcare, Pharmaceuticals & Education',
   description: 'Leading manufacturer of high-quality diabetes medications and healthcare solutions',
 
     icons: {

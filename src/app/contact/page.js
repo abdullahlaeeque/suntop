@@ -34,7 +34,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* WhatsApp Contact */}
               <a
-                href="https://wa.me/917089935433"
+                href="https://wa.me/919755871889"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
@@ -54,7 +54,7 @@ export default function ContactPage() {
 
               {/* Instagram Contact */}
               <a
-                href="https://instagram.com/_glucomat_"
+                href="https://instagram.com/suntop_international_group_26"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"

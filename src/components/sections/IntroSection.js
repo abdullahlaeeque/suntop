@@ -503,14 +503,14 @@ export const IntroSection = ({ isVisible = true }) => {
           </motion.p>
           <motion.div {...anim(0.2)} className="flex justify-center gap-4 flex-wrap">
             <a
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+91919755871889"
               className="inline-block px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90"
               style={{ background: '#ffffff', color: '#1e3a8a', fontFamily: "'Arial', sans-serif", letterSpacing: '0.04em' }}
             >
               📞 Call Us Now
             </a>
             <a
-              href="https://wa.me/917089935433"
+              href="https://wa.me/919755871889"
               className="inline-block px-8 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-200"
               style={{ border: '1px solid #93c5fd', fontFamily: "'Arial', sans-serif", letterSpacing: '0.04em' }}
               onMouseEnter={e => (e.currentTarget.style.background = '#1d4ed8')}

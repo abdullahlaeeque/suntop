@@ -42,7 +42,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-white">Suntop International</span>
-                <span className="text-blue-400 text-xs font-medium">Diabetes Care Specialists</span>
+                <span className="text-blue-400 text-xs font-medium">Healthcare, Pharmaceuticals & Education</span>
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
@@ -69,7 +69,7 @@ export function Footer() {
             <div className="flex space-x-3">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/917089935433"
+                href="https://wa.me/919755871889"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 hover:bg-green-700 rounded-lg p-2 transition-all duration-300 hover:scale-110"
@@ -82,7 +82,7 @@ export function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com/_glucomat_"
+                href="https://instagram.com/suntop_international_group_26"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-2 transition-all duration-300 hover:scale-110"
